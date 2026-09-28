@@ -1,1 +1,28 @@
 Transform2D.cpp
+
+A implementação começa com a inclusão do hpp e das bibliotecas:
+"#include "Transform2D.hpp""
+e <cmath>, para funções trigonometricas "std::sin()" e std::cos() para as matrizes de rotação.
+
+Método 1 translation():
+Cria para registrar em uma identidade a quantia de movimento em x e y desejada, sendo tx a movimentação em x e ty em y. (retorna uma matriz)
+
+Método 2 rotation():
+Cria uma matriz de rotação em radianos, é uma rotação positiva em sentido antihorário, aqui é usado o <cmath> com:
+const float cosine = std::cos(angle_rad);
+const float sine = std::sin(angle_rad);
+retorna uma matriz de rotação
+
+Método 3 scale():
+Cria uma matriz identidade para a tranformação de escala, essa matriz multiplica os valores de X e Y por sx e sy, madificando a escala.
+
+Método 4 Operador *:
+Faz a multiplicação de duas matrizes Transform2D.
+
+Método 5 transform_point():
+Método que aplica a matriz ao ponto, o ponto sendo representado como [x, y, 1], como o ultimo valor é 1 a translação é aplicada, retorna um novo Vetor com as coordenadas transformadas
+
+Método 6 transform_vector():
+Método que recebe as novas coordenadas x e y e utiliza os valores de rotação e escala, não usa os valores m[2][0] e m[2][1], pois diferente do transform_point() não faz a translação. retorna um novo Vetor com a transformaçaõ.
+
+IA: GPT 5.6
