@@ -37,3 +37,4 @@ Chegará em um resultado de a = (6, 8)
 Função assert():
 Método usado para verificar condições durante a execução, detecta um dado ou uso incorreto de uma classe.
 
+IA usada: gpt 5.6
