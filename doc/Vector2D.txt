@@ -1,1 +1,39 @@
 Vector2d.cpp
+
+A implementação começa com a inclusão do arquivo "Vector2D.hpp":
+"#include "Vector2D.hpp"
+Depois disso temos <cassert> e <cmath>. <cassert> para verificar pré condições com o assert() e <cmath> para funções como "std::abs()" para comparações e divisões.
+
+Método 1 normalized():
+Ele retorna uma cópia normalizada do vetor, sem alterar o vetor original, começa fazendo um "assert(len>EPSILON)" para garantir que o verto não é nulo antes da normalização, depois cada parte é dividida pelo comprimento, o retorno é um novo vetor2d.
+
+Método 2 normalize():
+Faz a mesma coisa que o normalized(), só que modifica o próprio vetor.
+
+Método 3 equals():
+Compara 2 vetores para saber se são "iguais".
+Como os valores do vetor são pontos flutuantes usamos um valor de tolerância para dizer se dois vetores são "iguais".
+
+Métodos 4 e 5 Operador+ e Operador-:
+Realiza a soma ou subtração de dois vetores com os operadores "+" e "-", os componentes correspondentes são somados e retorna um novo vetor2d como resultado.
+       Vector2D a(2, 3);
+       Vector2D b(4, 5);
+       Vector2D c = a + b;
+Chegará em um resultado de c = (6, 8)
+
+Método 6 Operador*:
+O operador "*" recebe um valor escalar e multiplica os componentes do vetor por esse valor e retorna um novo vetor.
+
+Método 7 Operador/:
+Mesma coisa que o "*", só que existe uma verificação para o valor não ser 0, já que divisão por 0 não existe. (retorna novo vetor)
+
+Métodos 8 a 11 operadores com =:
+Fazem a mesma coisa que os anteriores, só que em vez de criar um vetor novo, ele altera um existente.
+       Vector2D a(2, 3);
+       Vector2D b(4, 5);
+       a += b;
+Chegará em um resultado de a = (6, 8)
+
+Função assert():
+Método usado para verificar condições durante a execução, detecta um dado ou uso incorreto de uma classe.
+
